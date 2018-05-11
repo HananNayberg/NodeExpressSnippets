@@ -2,9 +2,9 @@
 
 //==========add below require list========
 //connect to db: defines what db and collections to use
-var mongo = require('mongodb');
-var monk = require('monk');
-var db = monk('localhost:27017/YOUR.db.OR.Collection.name');
+const mongo = require('mongodb');
+const monk = require('monk');
+const db = monk('localhost:27017/YOUR.db.OR.Collection.name');
 
 
 //======add below var app = express()========
@@ -16,8 +16,8 @@ app.use(function(req,res,next){
 
   //a sample GET request route 
   router.get('/URL.NAME', (req,res)=> {
-    var db = req.db; 
-    var collection = db.get('DB.Or.Collection.Name');
+    const db = req.db; 
+    const collection = db.get('DB.Or.Collection.Name');
     collection.find({},{}, (e,docs) => {
       res.json(docs);
     });
